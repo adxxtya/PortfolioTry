@@ -1,0 +1,26 @@
+---
+import Hero from "../components/Hero/Hero.astro";
+import MainHead from "../layouts/MainHead.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const { title, description } = Astro.props;
+---
+
+<MainLayout
+	title="Portfolio | Aditya Maurya"
+	description="My Personal Portfolio Website"
+>
+	<MainHead {title} {description} />
+	<Hero />
+</MainLayout>
+
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		/* font-family: 'Red Hat Mono', monospace; */
+	}
+
+
+</style>
