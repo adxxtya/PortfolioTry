@@ -1,0 +1,105 @@
+---
+import { useState } from "react";
+import MainHead from "../../layouts/MainHead.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<script>
+  // Logic for spinning the div 
+const rotateOnScroll = document.querySelector('.rotate-on-scroll') as HTMLElement;
+let lastScrollPosition = 0;
+let rotationAngle = 0;
+
+window.addEventListener('scroll', () => {
+  const currentScrollPosition = window.scrollY;
+
+  if (currentScrollPosition > lastScrollPosition) {
+    // Scrolling down
+    rotationAngle += 25;
+    rotateOnScroll.style.transform = `rotate(${rotationAngle}deg)`;
+  } else {
+    // Scrolling up
+    rotationAngle -= 25;
+    rotateOnScroll.style.transform = `rotate(${rotationAngle}deg)`;
+  }
+
+  lastScrollPosition = currentScrollPosition;
+});
+
+</script>
+
+
+<MainLayout>
+    <MainHead title="Experimental Page" description="This is an experimental page" />
+ 
+    <div>
+        <div class="rotate-on-scroll">
+          <div class="inside-rotate">
+            <div class="inside-circle">
+            </div>  
+          </div> 
+         <svg viewBox="0 0 100 100" width="100" height="100">
+          <defs>
+            <path id="circle"
+              d="
+                M 50, 50
+                m -37, 0
+                a 37,37 0 1,1 74,0
+                a 37,37 0 1,1 -74,0"/>
+          </defs>
+          <text font-size="17">
+            <textPath xlink:href="#circle">
+                &nbsp;• MY • SOCIAL • MEDIA • LINKS •  
+            </textPath>
+          </text>
+        </svg>
+        </div>
+    </div>
+
+</MainLayout>
+
+
+<style>
+
+.rotate-on-scroll {
+  width: 120px;
+  height: 120px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  transition: transform 0.8s ease-out;
+  z-index: 1000000;
+}
+
+
+/* My Social Media CSS */
+svg {
+  fill: currentColor;
+  height: auto;
+  max-width: 66vmin;
+  transform-origin: center;
+  width: 100%;
+  color: aliceblue;
+}
+
+
+/* Within Social Media Effect */
+.inside-rotate {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inside-circle {
+  background-color: aquamarine;
+  height: 60%;
+  width: 60%;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+</style>

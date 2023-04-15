@@ -42,15 +42,15 @@
 <main
   class:list={[
     "hero-container",
-    "bg-yellow-300 h-full flex justify-center items-center",
+    "h-full flex justify-center items-center",
   ]}
 >
-  <div class:list={["hero", "bg-green-400  w-full h-[80%] flex"]}>
-    <div class="bg-blue-400 w-[40%] flex justify-center items-center">
-      <a href="/" target="_blank noreferrer">
+  <div class:list={["hero", " w-full h-[80%] flex text-white"]}>
+    <div class="w-[40%] flex justify-center items-center">
+      <a href="#" target="_noreferrer">
         <div class="card">
           <div class="wrapper">
-            <img src="/assets/me/me-here.jpg" class="cover-image" />
+            <img src="/assets/me/me-here.webp" class="cover-image" />
           </div>
           <div
             class:list={[
@@ -61,14 +61,14 @@
             <div>Aditya Maurya</div>
             <div>Full Stack Developer</div>
           </div>
-          <img src="/assets/me/me.png" class="character" />
+          <img src="/assets/me/me.webp" class="character" />
         </div>
       </a>
     </div>
 
-    <div class="bg-teal-400 w-[60%] flex items-center">
+    <div class="w-[60%] flex items-center">
       <div
-        class="bg-red-400 w-full h-[100%] flex flex-col justify-center gap-8"
+        class="w-full h-[100%] flex flex-col justify-center gap-8"
       >
         <div class="gap-0">
           <div class="text-9xl">I'M</div>
@@ -81,8 +81,8 @@
           stunning and user-friendly interfaces that captivate users and drive
           measurable results for businesses.
         </div>
-        <div class="bg-yellow-400 flex flex-row w-full">
-          <div class="mx-8">
+        <div class="flex flex-row w-full">
+          <div class="mx-8 ml-0">
             <button class="button-1">
               <div class="svg-wrapper-1">
                 <div class="svg-wrapper">
@@ -133,12 +133,7 @@
   h1 {
     font-family: "Space Mono", monospace;
     font-size: clamp(3rem, 10vw, 10rem);
-    color: black;
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  }
-
-  h1:hover {
-    color: black;
   }
 
   /* Card Hover Styles */
@@ -152,7 +147,7 @@
 
   .card {
     position: relative;
-    width: 266px;
+    width: 306px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -192,7 +187,8 @@
     transition: all 0.5s;
     position: absolute;
     left: 0;
-    border-radius: 10px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
   .wrapper::before {
     top: 0;
@@ -238,12 +234,15 @@
     transition: all 0.5s;
     position: absolute;
     z-index: -1;
+    
   }
   .card:hover .character {
     opacity: 1;
     transform: translate3d(0%, -40%, 100px) scale(1.8);
   }
 
+
+  
   /* Button Hover Styles */
   .button-1 {
     font-family: inherit;
