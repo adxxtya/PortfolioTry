@@ -1,0 +1,52 @@
+---
+import MainHead from "../../layouts/MainHead.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const array = ['icons8-apollo','icons8-redis','icons8-prisma-orm','icons8-redux','icons8-typescript','icons8-tailwindcss','icons8-postgresql','icons8-nodejs','icons8-react-native','icons8-docker',]
+
+---
+
+
+<MainLayout>
+    <MainHead title="" description="" />
+
+    
+    <div class:list={["page", "h-screen w-full bg-[#151518] flex justify-center items-center"]}>
+        <div class="h-[90%] w-full flex justify-center items-center m-[40px] gap-8">
+
+
+            <!-- <div class="h-[100%] w-[50%] flex justify-center items-center">
+                <div class="h-auto w-auto bg-slate-500 rounded-xl flex flex-col items-end">
+                    <p class="text-4xl text-white p-2 ml-4">This website illustrates...</p>
+                    <img class="min-h-[50%] w-[80%] object-cover rounded-b-xl round" src="assets/memes/drake.jpg" alt="drake-meme" />
+                </div>
+            </div> -->
+
+            <div class="h-[90%] w-[70%]">
+                <div class="h-[100%] w-full bg-slate-500 rounded-xl flex flex-col">
+                    <p class="text-4xl w-full text-white p-2 ml-4">Technologies used in this website...</p>
+                    <div class="w-full h-full flex flex-row">
+                        <div class="w-[50%] bg-teal-200 h-full ">
+                            <div class="w-full flex flex-row flex-wrap justify-around p-2">
+                            {array.map((arr) =>
+                                <img src={`/assets/logos/${arr}.svg`} class="p-2 w-12 h-12 m-1 rounded-full hover:drop-shadow-md bg-white flex justify-center items-center" />
+                            )}
+                           </div>
+                        </div>
+                        <div class="h-full w-[50%] bg-green-600">
+                            Hi
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</MainLayout>
+
+<style>
+
+
+</style>
